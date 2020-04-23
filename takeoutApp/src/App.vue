@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!--<img src="./assets/logo.png"> -->
     <HelloWorld/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import HelloWorld from './components/HelloWorld' // 导入此组件
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld // 注册该组件
   }
 }
 </script>

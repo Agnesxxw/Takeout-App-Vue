@@ -84,7 +84,7 @@
 </template>
 
 <script>
-export default {
+export default { // 以对象的形式来到处组件
   name: 'HelloWorld',
   data () {
     return {
