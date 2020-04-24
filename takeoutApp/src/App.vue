@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png"> -->
-    <HelloWorld/>
+    <!--header-->
+    <MyHeader></MyHeader>
+    <!--navigation-->
+    <MyNav></MyNav>
+    <!--body-->
+    <!--router exit-->
+    <!--rendering content matched with the routes-->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld' // 导入此组件
-
+import MyHeader from './components/Header/Header'
+import MyNav from './components/Nav/Nav'
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld // 注册该组件
+    MyHeader,
+    MyNav
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
