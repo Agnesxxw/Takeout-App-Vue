@@ -5,7 +5,7 @@
       Order
       <i class="line"></i>
     </router-link>
-    <router-link class="nav-item" to="/comments">
+    <router-link class="nav-item" to="/ratings">
       Comments
       <i class="line"></i>
     </router-link>

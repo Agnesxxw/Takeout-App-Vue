@@ -11,12 +11,14 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const express = require('express')
 const app = express()
+
 //  1. data
 var goods = require("../data/01-商品页(点菜).json");
 var ratings = require("../data/02-商品页(评价).json");
 var seller = require("../data/03-商品页(商家).json");
 // 2. routes
 var routes = express.Router();
+app.use('/api',routes);
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -30,6 +32,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    before(app) {
+      app.get('/ratings', (req, res) => {
+        res.json(ratings)//接口返回json数据，上面配置的数据appData就赋值给data请求后调用
+      }),
+        app.get('/seller', (req, res) => {
+          res.json(seller)
+        }),
+        app.get('/goods', (req, res) => {
+          res.json(goods)
+        })
+    },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
@@ -50,19 +63,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    },
-    before(app) {
-      app.get('/ratings', (req, res) => {
-        res.json(ratings)//接口返回json数据，上面配置的数据appData就赋值给data请求后调用
-      }),
-        app.get('/seller', (req, res) => {
-          res.json(seller)
-        }),
-        app.get('/goods', (req, res) => {
-          res.json(goods)
-        }),
-        app.get('/api',routes)
     }
+
   },
   // 插件
   plugins: [
