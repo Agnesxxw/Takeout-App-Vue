@@ -82,11 +82,11 @@
   margin-right: 1px;
 }
 /* 主体内容 */
-.content-wrapper{
+.header .content-wrapper{
   padding: 17px 10px 11px;
   height:50px;
 }
-.content-wrapper .icon{
+.header .content-wrapper .icon{
   width:50px;
   height:50px;
   background-size: 135% 100%;
@@ -94,17 +94,17 @@
   border-radius: 3px;
   float:left
 }
-.content-wrapper .name{
+.header .content-wrapper .name{
   float:left;
   padding:18px 0 0 12px;
 
 }
-.content-wrapper .name h3{
+.header .content-wrapper .name h3{
   font-size: 16px;
   font-weight: bold;
   color: white;
 }
-.content-wrapper .collect {
+.header .content-wrapper .collect {
   width:25px;
   height:37px;
   float:right;
@@ -112,11 +112,11 @@
   text-align: center;
   padding-top: 6px;
 }
-.content-wrapper .collect img{
+.header .content-wrapper .collect img{
   width:20px;
   height:20px;
 }
-.content-wrapper .collect span{
+.header .content-wrapper .collect span{
   margin-top: 7px;
   color: white;
   font-size: 11px;
@@ -124,29 +124,30 @@
   white-space:nowrap;
 }
 /*公告内容*/
-.bulletin-wrapper {
+.header .bulletin-wrapper {
   height:16px;
   padding:0 10px;
+  margin-top: 20px;
 }
-.bulletin-wrapper .icon{
+.header .bulletin-wrapper .icon{
   width:16px;
   height:16px;
   float: left;
   margin-right: 6px;
 }
-.bulletin-wrapper .text{
+.header .bulletin-wrapper .text{
   color:white;
   float: left;
   font-size: 11px;
   line-height: 16px;
 }
-.bulletin-wrapper .detail{
+.header .bulletin-wrapper .detail{
   float: right;
   color: white;
   line-height: 16px;
   font-size: 11px;
 }
-.bulletin-wrapper .detail span{
+.header .bulletin-wrapper .detail span{
   font-size: 16px;
   line-height: 16px;
   float: right;
@@ -155,13 +156,104 @@
 /*背景*/
 .header .bg-wrapper {
   width: 100%;
-  height: 150px;
+  height: 180px;
   position: absolute;
   left:0;
   top:0;
   z-index: -1;
+
   background-size:100% 135%;
   background-position: center -12px;
 }
+/*公告内容*/
+.header .bulletin-detail{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:1;
+  background: rgba(98,98,98,0.8);
+}
+.header .bulletin-detail .detail-wrapper{
+  height:100%;
+  width:100%;
+  padding:43px 20px 125px;
+  box-sizing: border-box;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper{
+  width:100%;
+  height: 100%;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .icon{
+  width:60px;
+  height:60px;
+  background-size: 135% 100%;
+  background-position: center;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .name{
+  margin-top: 13px;
+  font-size: 15px;
+  color: white;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .tip{
+  font-size: 11px;
+  color: #bababc;
+  margin-top: 8px;
+
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .tip i{
+  margin: 0 7px;
+
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .time{
+  font-size: 13px;
+  color: #bababc;
+  margin-top: 13px;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts{
+  margin-top: 20px;
+  padding:0 20px ;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts p{
+  padding-top: 20px;
+  border-top:1px solid #bababc;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts img{
+  width:16px;
+  height:16px;
+  vertical-align: middle;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts span{
+font-size: 11px;
+  line-height: 16px;
+  color: white;
+}
+.header .bulletin-detail .detail-wrapper .close-wrapper{
+  height:40px;
+  padding-top: 20px;
+  text-align: center;
+}
+.header .bulletin-detail .detail-wrapper .close-wrapper span{
+  font-size: 18px;
+  width:40px;
+  line-height: 40px;
+  height:40px;
+  color: white;
+  display: inline-block;
+  background:rgba(118,118,118,0.7);
+  boder:1px solid rgba(140,140,140,0.9);
+  border-radius:50%;
+}
+
+
 
 
