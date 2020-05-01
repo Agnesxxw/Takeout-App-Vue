@@ -1,0 +1,124 @@
+.goods {
+  display:flex;
+/*  通过样式确定高度*/
+  position: absolute;
+  top:220px;
+  bottom: 51px;
+  overflow: hidden;
+  width: 100%;
+}
+/*
+flex-grow(定义放大比例，默认为0，如果存在剩余空间，也不放大, 如果为1就放大，该值必选，其他可不选) |
+flex-shrink（定义缩小比例，默认为1，如果空间不足， 则该项目会被缩小，为0时，其他项目为1，则空间不足时，前者不缩小） |
+flex-basis（在分配多余空间之前，项目占据主轴，浏览器根据这个属性，计算占据主轴是否有多余空间，auto即项目本来大小，设置为跟width或height属性值一样，则项目占据固定空间）
+
+default： 0 1 auto
+*/
+.goods .menu-wrapper {
+  flex:0 0 85px;
+  background: #f4f4f4;
+}
+.goods .menu-wrapper .menu-item{
+  padding: 16px 23px 15px 10px;
+  border-bottom: 1px solid #E4E4E4;
+}
+/*多行显示省略，webkit的css扩展，适用范围：webkit浏览器以及移动端*/
+.goods .menu-wrapper .menu-item .text{
+  font-size: 13px;
+  color:#333333;
+  line-height: 17px;
+  -webkit-line-clamp:2;
+  /*必须设置，将对象作为弹性伸缩盒子*/
+  display: -webkit-box;
+/* 必须设置，设置或检索伸缩盒子的子元素排列方式*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.goods .menu-wrapper .menu-item .text .icon {
+  width:15px;
+  height:15px;
+  vertical-align: middle;
+}
+
+.goods .foods-wrapper{
+  flex:1;
+
+}
+.goods .foods-wrapper .container-list{
+  padding: 11px 11px 0 11px;
+  border-bottom: 1px solid #E4E4E4;
+}
+.goods .foods-wrapper .container-list img{
+  width: 100%;
+  margin-bottom: 11px;
+  border-radius: 5px;
+}
+.goods .foods-wrapper .food-list{
+  padding: 11px;
+}
+.goods .foods-wrapper .food-list .title{
+  font-size: 13px;
+  height: 13px;
+  background: url("btn_yellow_highlighted@2x.png") no-repeat left center;
+  background-size: 2px 10px;
+  padding-left: 7px;
+  margin-bottom: 12px;
+}
+.goods .foods-wrapper .food-list .food-item{
+  display: flex;
+  margin-bottom: 25px;
+}
+.goods .foods-wrapper .food-list .food-item .icon{
+  flex:0 0 63px;
+  height: 75px;
+  background-position: center;
+  background-size: 120% 100%;
+  background-repeat: no-repeat;
+  margin-right: 11px;
+
+}
+.goods .foods-wrapper .food-list .food-item .content{
+  flex:1;
+}
+.goods .foods-wrapper .food-list .food-item .content .name{
+  font-size: 16px;
+  line-height: 21px;
+  color: #333333;
+  margin-bottom: 10px;
+  padding-right: 27px;
+}
+.goods .foods-wrapper .food-list .food-item .content .desc{
+  font-size: 10px;
+  line-height: 19px;
+  color: #bfbfbf;
+  margin-bottom: 8px;
+
+  -webkit-line-clamp:1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+.goods .foods-wrapper .food-list .food-item .content .extra{
+  font-size: 10px;
+  color: #bfbfbf;
+  margin-bottom: 7px;
+}
+.goods .foods-wrapper .food-list .food-item .content .extra .saled{
+  margin-right: 14px;
+}
+.goods .foods-wrapper .food-list .food-item .content .product {
+  height:15px;
+  margin-bottom: 6px;
+}
+.goods .foods-wrapper .food-list .food-item .content .price{
+  font-size: 0;
+}
+.goods .foods-wrapper .food-list .food-item .content .price .text{
+  color: #fb4e44;
+  font-size: 14px;
+}
+.goods .foods-wrapper .food-list .food-item .content .price .unit{
+  font-size: 14px;
+  color: #bfbfbf;
+}
