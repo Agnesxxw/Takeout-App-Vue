@@ -22,6 +22,12 @@ default： 0 1 auto
   padding: 16px 23px 15px 10px;
   border-bottom: 1px solid #E4E4E4;
 }
+
+.goods .menu-wrapper .menu-item.current{
+  background: white;
+  font-weight: bold;
+  margin-top: -1px;
+}
 /*多行显示省略，webkit的css扩展，适用范围：webkit浏览器以及移动端*/
 .goods .menu-wrapper .menu-item .text{
   font-size: 13px;
