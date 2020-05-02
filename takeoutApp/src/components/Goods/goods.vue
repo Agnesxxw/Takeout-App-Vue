@@ -57,17 +57,20 @@
         </li>
       </ul>
     </div>
+    <shopCart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip"></shopCart>
   </div>
 </template>
 
 <script>
   // 倒入BScroll
   import BScroll from 'better-scroll'
+  import shopCart from "../shopCart/shopCart";
     export default {
       data(){
         return {
           container:{},
           goods:[],
+          poiInfo:{},
           listHeight:[],
           scrollY:0, // 当前的滚动位置
           menuScroll:{},
@@ -84,7 +87,7 @@
               // that.poiInfo = dataSource.data.poi_info;
               that.container = dataSource.data.container_operation_source;
               that.goods = dataSource.data.food_spu_tags;
-
+              that.poiInfo = dataSource.data.poi_info;
               // 调用滚动的初始化方法
               // that.initScroll() 这样直接调用是不行的
               // 开始时，create 阶段 dom元素还没有渲染，这个时候的高度是有问题的，
@@ -163,6 +166,10 @@
           return 0;
         }
 
+      },
+      components:{
+        BScroll,
+        shopCart
       }
     }
 </script>
