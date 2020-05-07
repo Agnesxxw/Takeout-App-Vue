@@ -15,6 +15,7 @@
             <img :src="item.icon" v-if="item.icon" class="icon"/>
             {{item.name}}
           </p>
+          <i class="num" v-show="calculateCount(item.spus)">{{calculateCount(item.spus)}}</i>
         </li>
       </ul>
     </div>
@@ -52,19 +53,23 @@
                 </p>
 
               </div>
+              <div class="cartControl-wrapper">
+                <cartControl :food="food"></cartControl>
+              </div>
             </li>
           </ul>
         </li>
       </ul>
     </div>
-    <shopCart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip"></shopCart>
+    <shopCart :selectFoods="selectFoods" :poiInfo="poiInfo"></shopCart>
   </div>
 </template>
 
 <script>
   // 倒入BScroll
   import BScroll from 'better-scroll'
-  import shopCart from "../shopCart/shopCart";
+  import shopCart from "../shopCart/shopCart"
+  import cartControl from "../cartControl/cartControl";
     export default {
       data(){
         return {
@@ -117,7 +122,8 @@
             click:true //默认阻止了浏览器的原生点击事件
           });
           this.foodScroll = new BScroll(this.$refs.foodScroll,{
-            probeType:3
+            probeType:3,
+            click:true
           });
           // 添加滚动监听事件
           this.foodScroll.on("scroll", (pos)=>{
@@ -149,7 +155,17 @@
           let el = foodlist[index];
           this.foodScroll.scrollToElement(el, 250)
 
+        },
+        calculateCount(spus){ // 当前分类下的商品个数
+          let count = 0;
+          spus.forEach((food)=>{
+            if(food.count > 0){
+              count += food.count
+            }
+          });
+          return count;
         }
+
       },
       computed:{
         currentIndex(){ // 根据右侧滚动位置，确定对应的索引
@@ -164,12 +180,24 @@
             }
           }
           return 0;
+        },
+        selectFoods(){
+          let foods = []
+          this.goods.forEach((good)=>{
+            good.spus.forEach((food)=>{
+              if(food.count > 0){
+                foods.push(food)
+              }
+            });
+          });
+          return foods;
         }
 
       },
       components:{
         BScroll,
-        shopCart
+        shopCart,
+        cartControl
       }
     }
 </script>

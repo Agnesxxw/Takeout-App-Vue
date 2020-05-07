@@ -21,6 +21,7 @@ default： 0 1 auto
 .goods .menu-wrapper .menu-item{
   padding: 16px 23px 15px 10px;
   border-bottom: 1px solid #E4E4E4;
+  position: relative;
 }
 
 .goods .menu-wrapper .menu-item.current{
@@ -44,6 +45,20 @@ default： 0 1 auto
   width:15px;
   height:15px;
   vertical-align: middle;
+}
+
+.goods .menu-wrapper .menu-item .num{
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius:50%;
+  right:5px;
+  top:5px;
+  color: white;
+  text-align: center;
+  background: red;
+  font-size: 7px;
+  line-height: 13px;
 }
 
 .goods .foods-wrapper{
@@ -73,6 +88,7 @@ default： 0 1 auto
 .goods .foods-wrapper .food-list .food-item{
   display: flex;
   margin-bottom: 25px;
+  position: relative;
 }
 .goods .foods-wrapper .food-list .food-item .icon{
   flex:0 0 63px;
@@ -127,4 +143,10 @@ default： 0 1 auto
 .goods .foods-wrapper .food-list .food-item .content .price .unit{
   font-size: 14px;
   color: #bfbfbf;
+}
+
+.goods .foods-wrapper .food-list .food-item .cartControl-wrapper{
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
