@@ -22,7 +22,7 @@
         </div>
         <div class="list-header">
           <h3 class="title">1号口袋</h3>
-          <div class="empty" @click="emptyFn">
+          <div class="empty" @click="emptyFn"><!--清空购物车-->
             <img src="./ash_bin.png" />
             <span>清空购物车</span>
           </div>
@@ -50,8 +50,7 @@
       </div>
     </div>
 
-
-    <div class="shopcart-mask" v-show="listShow" @click="hideMask"></div>
+    <div class="shopcart-mask" v-show="listShow" @click="hideMask"></div><!--vue的组件中只能有一个主要的跟元素-->
   </div>
 
 </template>
@@ -135,13 +134,13 @@
 
         // BScoll相关
         if(show) {
-          this.$nextTick(() => {
+          this.$nextTick(() => { // 数据已经渲染上去了再去计算高度
             if(!this.shopScroll) {
               this.shopScroll = new BScroll(this.$refs.listContent, {
                 click: true
               });
             } else {
-              this.shopScroll.refresh();
+              this.shopScroll.refresh(); // 重新计算
             }
           });
         }
@@ -371,7 +370,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: 98px;
+    z-index: 98;
     background: rgba(7,17,27,0.6);
   }
 
