@@ -35,7 +35,7 @@ export default {
         var dataSource = response.data;
         if(dataSource.code == 0){
           that.poiInfo = dataSource.data.poi_info;
-          console.log(dataSource)
+          //console.log(dataSource)
         }
       })
       .catch(function(error) {		// 出错处理
